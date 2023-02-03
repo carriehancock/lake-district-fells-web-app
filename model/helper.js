@@ -15,8 +15,9 @@ module.exports = async function db(query) {
     const con = mysql.createConnection({
       host: DB_HOST || "127.0.0.1",
       user: DB_USER || "root",
-      password: DB_PASS,
-      database: DB_NAME || "database",
+      //NB added in || "root" into password below. 
+      password: DB_PASS, 
+      database: DB_NAME || "lake_district_fells",
       multipleStatements: true
     });
 
@@ -43,7 +44,7 @@ module.exports = async function db(query) {
           }
 
           // push the result (which should be an OkPacket) to data
-          // germinal - removed next line because it returns an array in an array when empty set
+          // terminal - removed next line because it returns an array in an array when empty set
           // results.data.push(result);
         } else if (result[0].constructor.name == "RowDataPacket") {
           // push each row (RowDataPacket) to data

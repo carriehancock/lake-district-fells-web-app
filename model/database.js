@@ -11,7 +11,7 @@ const con = mysql.createConnection({
   host: DB_HOST || "127.0.0.1",
   user: DB_USER || "root",
   password: DB_PASS,
-  database: DB_NAME || "todos",
+  database: DB_NAME || "lake_district_fells",
   multipleStatements: true
 });
 
@@ -23,7 +23,7 @@ con.connect(function(err) {
 
   con.query(sql, function (err, result) {
     if (err) throw err;
-    console.log("Table creation `items` was successful!");
+    console.log("Table creation `entries` was successful!");
 
     console.log("Closing...");
   });

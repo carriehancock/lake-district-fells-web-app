@@ -19,7 +19,7 @@ const EntriesPage = () => {
       <h1>Entries page</h1>
 
       <div>
-        {entries.map(entry => <article key={entry.id}>{entry.title}</article>)}
+        {entries.map(entry => <article key={entries.id}>{entries.dateClimbed}</article>)}
       </div>
     </main>
   )
