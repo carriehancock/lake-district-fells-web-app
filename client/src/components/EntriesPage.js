@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react'
 
+
 const EntriesPage = () => {
   const [entries, setEntries] = useState([])
 
@@ -19,7 +20,7 @@ const EntriesPage = () => {
       <h1>Entries page</h1>
 
       <div>
-        {entries.map(entry => <article key={entries.id}>{entries.dateClimbed}</article>)}
+        {entries.map(entry => <article key={entries.id}>{entries.date_climbed}</article>)}
       </div>
     </main>
   )

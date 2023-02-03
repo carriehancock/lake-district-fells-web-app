@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 router.get('/entries', async function(req, res, next) {
   try {
     const response = await db('SELECT * from entries;')
-    const entries = response.data
+    let entries = response.data
     
     res.send(entries);
   } catch(error) {
@@ -28,7 +28,7 @@ router.get("/:id", async function(req, res, next) {
   const results = await db(`
   SELECT * FROM entries WHERE id = ${id};
   `)
-  const entries = results.data
+  let entries = results.data
   const entry = entries[0]
 
   if (!entry) {
@@ -55,32 +55,61 @@ router.post("/", async function(req, res, next) {
   const date_climbed = body.date_climbed
   
   try {
-    await db (`
+    await db(`
     insert into entries (
-      id,
+      id, 
       group, 
       sub_group, 
       fell_name, 
       fell_height, 
-      grid_reference, 
-      date_climbed)
+      grid_reference, date_climbed)
     values (
-      `${id}`,
-      `${group}`, 
-      `${sub_group}`,
-      `${fell_name}`,
-      `${fell_height}`,
-      `${grid_reference}`,
-      `${date_climbed}`    
-      );
+      '${id}',
+      '${group}', 
+      '${sub_group}',
+      '${fell_name}',
+      '${fell_height}',
+      '${grid_reference}',
+      '${date_climbed});
     `)
 
     res.status(201).send()
+
   } catch(error) {
     res.status(500).send(error)
   }
 
 });
+
+// DELETE one entry from the database
+
+router.delete("/:id", async function(req, res, next) {
+  const params = req.params
+  const id = params.id
+
+  try {
+    const results = await db(`
+    SELECT * FROM entries WHERE id = ${id};
+    `)
+    const entries = results.data
+    const entry = entries[0]
+
+    if (!entry) {
+      res.status(404).send()
+      return
+    }
+
+  await db(`
+  DELETE FROM entries WHERE id = ${id};
+  `)
+
+  res.send()
+} catch (error) {
+  res.status(500).send(error)
+}
+
+});
+
 
 
 module.exports = router;
