@@ -5,9 +5,9 @@ CREATE TABLE entries (
   group VARCHAR(75) NOT NULL,
   sub_group VARCHAR(75) NOT NULL,
   fell_name VARCHAR(75) NOT NULL,
-  fell_height BOOL NOT NULL,
+  fell_height VARCHAR(10) NOT NULL,
   grid_reference VARCHAR(15) NOT NULL,
-  date_climbed DATE(100) NOT NULL
+  date_climbed DATE NOT NULL
 );
 
 INSERT INTO entries (
@@ -27,3 +27,4 @@ INSERT INTO entries (
   'NY260290'
   '31/01/2023'
 );
+

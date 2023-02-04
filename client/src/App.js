@@ -1,5 +1,5 @@
 import './App.css';
-import EntriesPage from './components/EntriesPage'
+import EntriesPage from './components/EntriesPage.js'
 
 function App() {
   return (
