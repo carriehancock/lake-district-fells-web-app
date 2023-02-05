@@ -4,7 +4,7 @@ var db = require('../model/helper')
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-  res.send("hello3");
+  res.send();
 });
 
 router.get('/entries', async function(req, res, next) {
@@ -47,12 +47,12 @@ router.get("/:id", async function(req, res, next) {
 
 router.post("/", async function(req, res, next) {
   const body = req.body
-  const group = body.group
-  const sub_group = body.sub_group
-  const fell_name = body.fell_name
-  const fell_height = body.fell_height
-  const grid_reference = body.grid_reference
-  const date_climbed = body.date_climbed
+  const fellGroup = body.fellGroup
+  const fellSubGroup = body.fellSubGroup
+  const fellName = body.fellName
+  const fellHeight = body.fellHeight
+  const gridReference = body.gridReference
+  const dateClimbed = body.dateClimbed
   
   try {
     await db(`
@@ -62,16 +62,17 @@ router.post("/", async function(req, res, next) {
       sub_group, 
       fell_name, 
       fell_height, 
-      grid_reference, date_climbed)
+      grid_reference, 
+      date_climbed)
     values (
       '${id}',
-      '${group}', 
-      '${sub_group}',
-      '${fell_name}',
-      '${fell_height}',
-      '${grid_reference}',
-      '${date_climbed});
-    `)
+      '${fellGroup}', 
+      '${fellSubGroup}',
+      '${fellName}',
+      '${fellHeight}',
+      '${gridReference}',
+      '${dateClimbed});
+    `);
 
     res.status(201).send()
 

@@ -1,30 +1,12 @@
-DROP TABLE IF EXISTS entries;
+DROP TABLE IF EXISTS entries; CREATE TABLE entries(id VARCHAR(50) NOT NULL PRIMARY KEY, fellGroup VARCHAR(100) NOT NULL, fellSubGroup VARCHAR(100) NOT NULL, fellName VARCHAR(100) NOT NULL, fellHeight VARCHAR(100) NOT NULL, gridReference VARCHAR(100) NOT NULL, dateClimbed DATE);
 
-CREATE TABLE entries (
-  id VARCHAR(10) NOT NULL,
-  group VARCHAR(75) NOT NULL,
-  sub_group VARCHAR(75) NOT NULL,
-  fell_name VARCHAR(75) NOT NULL,
-  fell_height VARCHAR(10) NOT NULL,
-  grid_reference VARCHAR(15) NOT NULL,
-  date_climbed DATE NOT NULL
-);
-
-INSERT INTO entries (
-  id,
-  group,
-  sub_group,
-  fell_name
-  fell_height
-  grid_reference
-  date_climbed
+INSERT INTO entries (id,fellGroup, fellSubGroup, fellName, fellHeight, gridReference, dateClimbed
 ) VALUES (
-  'SKD-1'
-  'Northern Fells', 
-  'Skiddaw Group',
-  'Skiddaw'
-  '931'
-  'NY260290'
-  '31/01/2023'
+"SKD-1",
+"Northern Fells", 
+"Skiddaw Group",
+"Skiddaw",
+"931",
+"NY260290",
+"2023/01/31"
 );
-
