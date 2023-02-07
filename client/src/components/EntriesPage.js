@@ -22,7 +22,7 @@ const EntriesPage = () => {
   return (
   <>
     <div>
-     <h3>Fells</h3>      
+          
      </div>
         <div className="FellNames">
         <ul>
