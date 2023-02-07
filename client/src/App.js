@@ -1,19 +1,15 @@
-import React from "react"
 import Header from "./Components/Layout/Header.js"
 import EntriesPage from './Components/EntriesPage'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import React, {Fragment} from "react"
 
 function App() {
 
   return (
-
-  <main>
-    <div>
+    <Fragment>  
       <Header/> 
       <EntriesPage /> 
-    </div>    
-  </main>    
+    </Fragment>    
   );
 }
 

@@ -1,17 +1,18 @@
 import React from "react"
 import { Fragment } from "react";
+import MountainsListButton from "./MountainsListButton";
 import mainImage from "../UI/Images/catbells-header-img.jpg"
- 
+import classes from "./Header.module.css" 
 const Header = (props) => {
     return (
     
     <Fragment>
        
-        <header>
-            <h1>Lake District Fell Tracker</h1> 
-            <button>Open fells list</button>
+        <header className={classes.header}>
+            <h1>National 10 x 3 Peaks</h1> 
+            <MountainsListButton/>
         </header>
-        <div>
+        <div className={classes["main-image"]}>
             <img src ={mainImage} alt="Catbells"/>
         </div>
     </Fragment>
