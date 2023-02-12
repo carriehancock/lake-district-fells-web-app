@@ -6,11 +6,14 @@ import React, {Fragment} from "react"
 function App() {
 
   return (
+<html data-theme="coffee">  
+  <main>
     <Fragment>  
       <Header/> 
       <EntriesPage /> 
     </Fragment>    
-  );
+  </main>
+</html> );
 }
 
 export default App;

@@ -2,21 +2,21 @@ import {useEffect, useState} from 'react'
 
 
 const EntriesPage = () => {
-  const [entries, setEntries] = useState([]);
+  const [mountains, setEntries] = useState([]);
   
 
   useEffect(() => {
     const fetchEntries = async () => {
-      const response = await fetch('http://localhost:5050/entries')
-      const entries = await response.json();
+      const response = await fetch('http://localhost:5050/Mountains')
+      const mountains = await response.json();
 
-      setEntries(entries)
+      setEntries(mountains)
     }
 
     fetchEntries();
   }, []);
 
-  console.log(entries)
+  console.log(mountains)
 
 
   return (
@@ -24,22 +24,21 @@ const EntriesPage = () => {
     <div>
           
      </div>
-        <div className="FellNames">
+        <div className="mountainNames">
         <ul>
-            {entries.map(entry => ( 
-            <li key={entry.fellName}>
+            {mountains.map(entry => ( 
+            <li key={entry.mountainName}>
             <span>
-                {entry.fellName}                
+                {entry.mountainName}                
             </span>
             </li>
             
             ))}
              
-            <button><span role="img" aria-label="check">x</span></button>
-
+            <input type="checkbox" class="checkbox checkbox-secondary" />
         </ul>
             
-        <button className="UpdateButton">Update Map</button>
+        <button class="btn btn-primary">Update</button>
 
         </div>
         </>

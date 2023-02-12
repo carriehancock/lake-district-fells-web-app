@@ -1,5 +1,5 @@
 {
-  "name": "memories-web-app",
+  "name": "Lake_District_fells_web_app",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
+    "daisyui": "^2.50.0",
     "debug": "~2.6.9",
     "dotenv": "^16.0.3",
     "express": "~4.16.1",

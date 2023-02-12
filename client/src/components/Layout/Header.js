@@ -9,7 +9,7 @@ const Header = (props) => {
     <Fragment>
        
         <header className={classes.header}>
-            <h1>National 10 x 3 Peaks</h1> 
+            <h1>National 3 x 5 Peaks</h1> 
             <MountainsListButton/>
         </header>
         <div className={classes["main-image"]}>
