@@ -1,5 +1,6 @@
 import Header from "./Components/Layout/Header.js"
-import EntriesPage from './Components/EntriesPage'
+import ChallengeSummary from "./Components/MountainsInfo/MountainsInfo.js";
+import MountainList from './Components/MountainsInfo/MountainList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, {Fragment} from "react"
 
@@ -7,12 +8,15 @@ function App() {
 
   return (
 <html data-theme="coffee">  
-  <main>
+  
     <Fragment>  
       <Header/> 
-      <EntriesPage /> 
+      <main>
+      <ChallengeSummary/>
+      <MountainList /> 
+      </main>
     </Fragment>    
-  </main>
+  
 </html> );
 }
 

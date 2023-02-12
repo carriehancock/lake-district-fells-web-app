@@ -51,14 +51,10 @@ router.post("/", async function (req, res, next) {
 
   try {
     await db(`
-    insert into entries (
-      mountainName, 
-      height, 
-      grid_reference, 
+    insert into entries ( 
       date_climbed,
       userEntry)
-    values (
-      '${mountainName}', 
+    values ( 
       '${dateClimbed},
       '${userEntry},);
 
