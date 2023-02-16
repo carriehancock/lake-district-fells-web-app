@@ -8,15 +8,18 @@ function App() {
 
   return (
 <html data-theme="coffee">  
-  
-    <Fragment>  
+  <main>
+     
       <Header/> 
-      <main>
+      
+        <body>
+    <Fragment> 
       <ChallengeSummary/>
       <MountainList /> 
-      </main>
-    </Fragment>    
-  
+    </Fragment>  
+      
+     </body>   
+  </main>
 </html> );
 }
 
