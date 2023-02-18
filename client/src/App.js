@@ -3,6 +3,7 @@ import ChallengeSummary from "./Components/MountainsInfo/MountainsInfo.js";
 import MountainList from './Components/MountainsInfo/MountainList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, {Fragment} from "react"
+import classes from "./App.css" 
 
 function App() {
 
@@ -11,7 +12,6 @@ function App() {
   <main>
      
       <Header/> 
-      
         <body>
     <Fragment> 
       <ChallengeSummary/>

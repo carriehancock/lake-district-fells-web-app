@@ -1,4 +1,4 @@
-import React from "react"
+import {useEffect, useState} from 'react'
 import MountainsListIcon from "./MountainsListIcon"
 import classes from "./MountainsListButton.module.css"
 const MountainsListButton = (props) => {
@@ -7,22 +7,32 @@ const MountainsListButton = (props) => {
     //     const handleChange = (event) => {
        
     //       setValue(event.target.value);
-          
-    return (
-    <button className="btn btn-primary" onClick>
-        <span>
-            <MountainsListIcon/>
-        </span> 
+    
+    const [dropDown, setDrop] =useState(false) 
 
-        <div className="dropdown dropdown-bottom dropdown-end">
-        <label tabIndex={0} className="btn m-1">Main Menu <MountainsListIcon/></label>
+    return (
+        <div>
+            <div>
+    <button className = {classes.button} onClick = {() => setDrop (!dropDown)}>
+        Main Menu <MountainsListIcon/>
+    </button></div>
+        {/* <span>
+            <MountainsListIcon/>
+        </span>  */}
+
+        {/* <div className="dropdown dropdown-bottom dropdown-end"> */}
+        {/* <p tabIndex={0} className="btn m-1">Main Menu </p> */}
    
-        <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+       <div className = {classes.menu}>
+        {dropDown?
+            (<ul tabIndex={0} >
             <li><a>Item 1</a></li>
             <li><a>Item 2</a></li>
-        </ul>
+        </ul>) : null
+        }
         </div>        
-    </button>
+    </div>
+        
     
     )
     }

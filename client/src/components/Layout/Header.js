@@ -1,22 +1,46 @@
 import React from "react"
-import { Fragment } from "react";
-import MountainsListButton from "./MountainsListButton";
-import mainImage from "../UI/Images/catbells-header-img.jpg"
-import classes from "./Header.module.css" 
+import "./Header.module.css" 
+import {useEffect, useState} from 'react'
+
+
 const Header = (props) => {
-    return (
-    
-    <Fragment>
+const [dropDown, setDrop] =useState(false)   
+  
+  return (
+           
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+      <a class="navbar-brand" href="#">Explore</a>
+        
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        
+        <span class="navbar-toggler-icon"></span>
        
-        <header className={classes.header}>
-            <h1 className="input-md">National 3 x 5 Peaks</h1> 
-            <MountainsListButton/>
-            
-        </header>
-        <div className={classes["main-image"]}>
-            <img src ={mainImage} alt="Catbells"/>
-        </div>
-    </Fragment>
+      </button>
+        
+      <div class="collapse navbar-collapse" id="navbarNav">
+    
+        <ul class="navbar-nav">
+    
+          <li class="nav-item active">
+   
+            <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+  
+          </li>
+   
+          <li class="nav-item">   
+            <a class="nav-link" href="#">Results</a>   
+          </li>   
+          <li class="nav-item">    
+            <a class="nav-link" href="#">FAQ</a>   
+          </li>   
+        </ul>   
+      </div>   
+    </nav>
+    
+    
+       
+   
     ); 
  };
 

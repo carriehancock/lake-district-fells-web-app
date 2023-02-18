@@ -1,14 +1,17 @@
 .button {
-  cursor: pointer;
-  font: inherit;
-  border: none;
   background-color: #041b78;
   color: white;
-  height: 60px;
-  justify-content: space-around;
-  align-items: center;
-  border-radius: 30px;
+  border: none;
+  border-radius: 20px;
+  padding-left: 20px;
+  font-size: large;
   font-weight: bold;
+}
+
+.menu {
+  border-radius: 0px;
+  margin-right: 2rem;
+  size: 15px;
 }
 
 .button:hover,
@@ -16,13 +19,13 @@
   background-color: #27387c;
 }
 
-.icon {
+/* .icon {
   border-radius: 25px;
   padding: 0rem 0rem;
   margin-left: 0rem;
-}
+} */
 
-.menu {
+/* .menu {
   border-radius: 0px;
   margin-right: 2rem;
   size: 15px;
@@ -34,14 +37,14 @@
   border-radius: 25px;
   margin-left: 1rem;
   font-weight: bold;
-}
+} */
 
-.button:hover .badge,
+/* .button:hover .badge,
 .button:active .badge {
   background-color: #92320c;
-}
+} */
 
-.bump {
+/* .bump {
   animation: bump 300ms ease-out;
 }
 
@@ -61,4 +64,4 @@
   100% {
     transform: scale(1);
   }
-}
+} */

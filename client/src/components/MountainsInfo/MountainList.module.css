@@ -1,5 +1,26 @@
 .mountainCard {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.indivCard {
+  margin: 8px;
+  box-shadow: 0px 0px 32px 0px rgba(89, 83, 83, 0.75);
+  border-radius: 9px;
+}
+.img {
+  box-shadow: 0px 0px 39px 0px rgba(89, 83, 83, 0.75);
+  margin-top: -20px;
+}
+
+.link {
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(32, 31, 31);
+  padding: 15px;
+  margin-left: 0px;
 }
 
 .mountains {
@@ -7,6 +28,13 @@
   width: 90%;
   margin: 2rem auto;
   animation: mountains-appear 1s ease-out forwards;
+}
+
+.countryTitle {
+  margin-left: 0.6rem;
+  position: flex;
+  text-align: center;
+  margin-top: 30px;
 }
 
 .mountains ul {
