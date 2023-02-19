@@ -1,43 +1,46 @@
+import React from "react";
 import {useEffect, useState} from 'react'
-import classes from "./MountainList.module.css"
+import classes from "../Components/MountainsInfo/MountainList"
 import Card from 'react-bootstrap/Card';
-import { Link } from 'react-router-dom'
-
-import benNevis from "../UI/Images/ben-nevis-img.jpg"
 
 
-const MountainList = () => {
-  const [mountains, setEntries] = useState([]);
+function FurtherInformationPage () {
   
-
-  useEffect(() => {
-    const fetchEntries = async () => {
-      const response = await fetch('http://localhost:5050/Mountains')
-      const mountains = await response.json();
-
-      setEntries(mountains)
-    }
-
-    fetchEntries();
-  }, []);
-
-  const scotlandMountains = mountains.filter(mountain => mountain.country === "Scotland") 
-
-  const englandMountains = mountains.filter(mountain => mountain.country === "England")
-
-  const walesMountains = mountains.filter(mountain => mountain.country === "Wales")
-
+    const [mountains, setEntries] = useState([]);
+    
   
+    useEffect(() => {
+      const fetchEntries = async () => {
+        const response = await fetch('http://localhost:5050/Mountains')
+        const mountains = await response.json();
   
+        setEntries(mountains)
+      }
   
-  console.log(mountains)
-
-  const mountainGroups = [{name: 'Scotland', mountains: scotlandMountains}, {name: 'England', mountains: englandMountains}, {name: 'Wales', mountains: walesMountains}]
+      fetchEntries();
+    }, []);
+  
+    const scotlandMountains = mountains.filter(mountain => mountain.country === "Scotland") 
+  
+    const englandMountains = mountains.filter(mountain => mountain.country === "England")
+  
+    const walesMountains = mountains.filter(mountain => mountain.country === "Wales")
+  
+    
+    
+    
+    console.log(mountains)
+  
+    const mountainGroups = [{name: 'Scotland', mountains: scotlandMountains}, {name: 'England', mountains: englandMountains}, {name: 'Wales', mountains: walesMountains}]
+  
 
 return (
+  <main> 
+<h1>Please work!</h1>
+{mountainGroups.map (group => (
 
-  <main>
-    {mountainGroups.map (group => (
+
+
       <div><h2 className={classes.countryTitle}>{group.name}</h2>
       <div className = {classes.mountainCard}>
        
@@ -58,7 +61,7 @@ return (
             
             </Card.Body>
             <Card.Img style={{ width: '100%', height: "210px"}} className={classes.img} variant="fixed" src= {mountain.img}></Card.Img>
-            <Link className={classes.link} {...mountain.id} to="/furtherInformation">Further information</Link>
+            <Card.Link className={classes.link} {...mountain.id} to="/furtherInformation">Further information</Card.Link>
             
           </Card>
           </div>
@@ -67,9 +70,17 @@ return (
       </div>
       </div> 
       ))}
-         
-  </main>
 
-  )}
+</main>
+  )
+}
 
-export default MountainList;
+
+
+
+
+
+
+
+
+export default FurtherInformationPage

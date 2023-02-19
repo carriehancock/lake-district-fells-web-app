@@ -2,6 +2,10 @@
   cursor: pointer;
 }
 
+/* .navbar {
+  box-shadow: 0 2px 90px rgba(1, 1, 1, 1);
+} */
+
 .header {
   position: sticky;
   top: 0;

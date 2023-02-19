@@ -2,30 +2,45 @@ import Header from "./Components/Layout/Header.js"
 import ChallengeSummary from "./Components/MountainsInfo/MountainsInfo.js";
 import MountainList from './Components/MountainsInfo/MountainList';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, {Fragment} from "react"
-import classes from "./App.css" 
+import React, {Fragment} from "react";
+import classes from "./App.css" ;
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import FurtherInformationPage from "./Pages/FurtherInformation.js";
+import Home from "./Pages/Home.js";
+import RootLayout from "./Pages/Root.js";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RootLayout/>,
+    children: [
+      { 
+    path: '/', 
+    element: <Home/>
+  },
+  { 
+    path: '/furtherInformation', 
+  element: <FurtherInformationPage/> 
+  }
+    ]
+  },
+  
+  
+])
 
 function App() {
 
   return (
-<html data-theme="coffee">  
+    
   <main>
-     
-      <Header/> 
-        <body>
-    <Fragment> 
-      <ChallengeSummary/>
-      <MountainList /> 
-    </Fragment>  
-      
-     </body>   
+<RouterProvider router={router}/>
   </main>
-</html> );
+       )
 }
 
 export default App;
 
-// </div>
+{/* 
 //      <div className="App">      
 //           <h2>About This Map</h2>
 //       <p>The map below shows all of the fells in the Lake District. Only hills with more than 30 m relative height (rising over 98 ft) are included. This includes most, but not all, Wainwrights 
@@ -49,4 +64,4 @@ export default App;
 //   const handleCheck = () => {
 //     console.log ('check')
 //   }
-// console.log(entries)
+// console.log(entries) */}
