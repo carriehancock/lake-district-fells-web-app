@@ -3,7 +3,7 @@ import classes from "./MountainList.module.css"
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom'
 
-import benNevis from "../UI/Images/ben-nevis-img.jpg"
+
 
 
 const MountainList = () => {
@@ -50,15 +50,18 @@ return (
              <Card.Title>{mountain.mountainName}
                 </Card.Title>
               <Card.Subtitle className="mb-2 text-muted">{mountain.heightm}m OD</Card.Subtitle>
-              <Card.Text
-               class="custom-control custom-switch">
-                <span><label class="custom-control-label" for="customSwitches">Climbed:  </label></span>
-                <input type="checkbox" class="custom-control-input" ></input>
+              <Card.Text 
+               className= {classes.infoShort}>
+                {mountain.infoShort}
               </Card.Text>
-            
+              <Card.Text 
+               class="custom-control custom-switch">
+                <span><label class="custom-control-label" for="customSwitches">Climbed: {" "} </label></span>
+                <span><input type="checkbox" class="custom-control-input" ></input></span>
+              </Card.Text>
             </Card.Body>
             <Card.Img style={{ width: '100%', height: "210px"}} className={classes.img} variant="fixed" src= {mountain.img}></Card.Img>
-            <Link className={classes.link} {...mountain.id} to="/furtherInformation">Further information</Link>
+            <Link className={classes.link} {...mountain.id} to={`/furtherInformation/${mountain.id}`}>Extra mountain info!</Link>
             
           </Card>
           </div>

@@ -1,5 +1,7 @@
 import { Outlet } from "react-router-dom"
 import Header from "../Components/Layout/Header"
+import Footer from "../Components/Layout/Footer"
+
 
 function RootLayout() {
 
@@ -7,6 +9,7 @@ function RootLayout() {
     <>
         <Header/>
         <Outlet/>
+        <Footer/>
     </>
     
     ) 

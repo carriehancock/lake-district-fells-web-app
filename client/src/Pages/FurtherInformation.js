@@ -1,8 +1,9 @@
 import React from "react";
 import {useEffect, useState} from 'react'
-import classes from "../Components/MountainsInfo/MountainList"
+
 import Card from 'react-bootstrap/Card';
 
+import classes from "../Components/MountainsInfo/MountainList.module.css";
 
 function FurtherInformationPage () {
   
@@ -36,7 +37,13 @@ function FurtherInformationPage () {
 
 return (
   <main> 
-<h1>Please work!</h1>
+<section className = {classes.intro} type="container"></section>    
+<h2 className={classes.pageTitle} > Mountain Information Page</h2>
+<hr/>
+<p className = {classes.summary}>Use the features on this page to plan your climb and upload your information. The route finder suggests potential routes for each mountain.</p>
+<hr/>
+<section/>
+
 {mountainGroups.map (group => (
 
 
@@ -46,22 +53,19 @@ return (
        
        {group.mountains.map((mountain) => {
           return (
-            <div className = {classes.indivCard} >
+            <div className = {classes.indivCard} type="container">
               
-            <Card style={{ width: '22rem', height: "24.rem"}}>
+            <Card style={{ width: '42rem', height: "45rem"}}>
             <Card.Body>
              <Card.Title>{mountain.mountainName}
                 </Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">{mountain.heightm}m OD</Card.Subtitle>
-              <Card.Text
-               class="custom-control custom-switch">
-                <span><label class="custom-control-label" for="customSwitches">Climbed:  </label></span>
-                <input type="checkbox" class="custom-control-input" ></input>
-              </Card.Text>
+              <Card.Subtitle className="mb-2 text-muted">   Elevation: {mountain.heightm}m OD</Card.Subtitle> <Card.Link className={classes.link}className="mb-2 text-muted" href={mountain.mapLink} > Grid Reference: {mountain.gridReference}  </Card.Link>
+              <Card.Text>{mountain.infoText}
+                 </Card.Text>
             
             </Card.Body>
-            <Card.Img style={{ width: '100%', height: "210px"}} className={classes.img} variant="fixed" src= {mountain.img}></Card.Img>
-            <Card.Link className={classes.link} {...mountain.id} to="/furtherInformation">Further information</Card.Link>
+            <Card.Img style={{ width: '100%', height: "400px"}} className={classes.img} variant="fixed" src= {mountain.img}></Card.Img>
+            <Card.Link ></Card.Link>
             
           </Card>
           </div>
@@ -70,6 +74,12 @@ return (
       </div>
       </div> 
       ))}
+      <div>
+        <section type = "container" className = "moreInfo">
+          <p>Mountains rock</p>
+
+        </section>
+      </div>
 
 </main>
   )

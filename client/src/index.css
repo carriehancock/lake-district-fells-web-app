@@ -30,3 +30,16 @@ body {
   margin: 0;
   background-color: #3f3f3f;
 }
+
+main {
+  font-family: "Noto Sans JP", sans-serif;
+  margin: 1;
+  text-align: center;
+}
+
+.error {
+  font-family: "Noto Sans JP", sans-serif;
+  margin: 1;
+  padding-top: 100px;
+  text-align: center;
+}
