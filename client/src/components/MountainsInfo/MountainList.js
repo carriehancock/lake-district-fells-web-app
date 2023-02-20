@@ -61,7 +61,7 @@ return (
               </Card.Text>
             </Card.Body>
             <Card.Img style={{ width: '100%', height: "210px"}} className={classes.img} variant="fixed" src= {mountain.img}></Card.Img>
-            <Link className={classes.link} {...mountain.id} to={`/furtherInformation/${mountain.id}`}>Extra mountain info!</Link>
+            <Link className={classes.link} {...mountain.id} to={`/furtherInformation/${mountain.id}`}>Extra mountain info</Link>
             
           </Card>
           </div>
